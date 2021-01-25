@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UI.Button;
+
 
 public class OpenBagMenu : MonoBehaviour
 {
@@ -12,11 +12,11 @@ public class OpenBagMenu : MonoBehaviour
     void Start()
     {
         Button btn = _Bag.GetComponent<Button>();
-        btn.OnClick.AddListener(OpenBag);
+        btn.onClick.AddListener(OpenBag);
     }
 
     void OpenBag()
     {
-        instantiate(_BagInterface, new Vector3(0, 0, 0));
+        Instantiate(_BagInterface, new Vector2(0, 0), Quaternion.identity);
     }
 }
